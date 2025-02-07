@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -24,33 +25,16 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.3/dist/iconify-icon.min.js"></script>
 
-    <!-- Remove this and fill in your name & photo in the required areas -->
-    <script>
-      fetch('https://randomuser.me/api/?inc=name,picture')
-        .then((response) => response.json())
-        .then(({ results }) => results[0])
-        .then(({ name, picture }) => {
-          document.querySelector('#name').innerText = name.first
-          document.querySelector(
-            '.navbar-brand'
-          ).innerText = `${name.first} ${name.last}`
-          document.title = `${name.first} ${name.last} Personal Site`
-          document.querySelector('#profilepic').src = picture.large
-        })
-    </script>
-
     <link href="styles/theme.css" rel="stylesheet" />
     <link href="styles/styles.css" rel="stylesheet" />
 
-    <!-- Set Page Title Here -->
-    <title></title>
+    <title>Daniel Gillespie's Personal Website</title>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg bg-primary fixed-top">
       <div class="container-fluid p-2 px-lg-2 py-lg-0">
-        <!-- Set Name Here -->
-        <a class="navbar-brand" href="#"></a>
+        <a class="navbar-brand" href="#home">Daniel Gillespie</a>
         <button
           class="navbar-toggler bg-white"
           type="button"
@@ -68,6 +52,15 @@
               <a class="nav-link" aria-current="page" href="#home">Home</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#about">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#hobbies">Hobbies</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#projects"
                 >Projects</a
               >
@@ -77,65 +70,90 @@
                 >Courses</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#contact"
-                >Contact</a
-              >
-            </li>
           </ul>
         </div>
       </div>
     </nav>
+
     <div
-      class="container section min-vh-100 d-flex justify-content-center flex-column align-items-center pt-5"
+      class="container section d-flex justify-content-center flex-column align-items-center pt-5"
       id="home"
     >
+
+    <div class="container section d-flex flex-column align-items-center text-center py-3">
+      <h2 class="mb-3">Technical Homework #3</h2>
+      <p class="lead"> 
+        New Section: Hobbies <br />
+        New Components Used: Alert, Carousel <br />
+        New Font: Times New Roman
+      </p>
+  </div>
+
       <div
         class="rounded-circle border border-3 border-primary p-1 mb-3 mt-0 mt-lg-5"
       >
-      <!-- Set Photo Here -->
         <img
           style="height: 150px; width: 150px"
           class="rounded-circle"
           draggable="false"
           id="profilepic"
+          src="images/Screen Shot 2023-02-02 at 1.00.18 AM.png"
         />
       </div>
+
       <div class="row mx-auto">
         <h4 class="h1 font-weight-bold mx-auto text-center">
-          <!-- Set Name Here -->
           Hi <iconify-icon icon="twemoji:waving-hand"></iconify-icon> I'm
-          <span id="name"></span>!
+          <span id="name">Daniel Gillespie</span>!
         </h4>
       </div>
+
+
       <div class="row mx-auto">
         <h5 class="h5 mx-auto text-center text-opacity-75 text-primary">
           Information Science & Technology Student at Temple University
         </h5>
       </div>
+
+      <div class="alert alert-info mt-4">
+        <strong>Fun Fact:</strong> I went to the Eagles' NFC Divisional Round Game and their NFC Championship Game the Year the Eagles won the Super Bowl!
+      </div>
+
+      <div class="row mt-3 next">
+        <a href="#about" class="col">
+          <iconify-icon icon="material-symbols:arrow-circle-down" class="arrow-next"></iconify-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="container section d-flex justify-content-center flex-column align-items-center py-3" id="about">
+      <div class="row mx-auto">
+        <h4 class="h1 font-weight-bold mx-auto text-center">About Me</h4>
+      </div>
+      <div class="row mx-auto">
+        <p class="h5 mx-auto text-center text-opacity-75 text-primary">I'm an IS&T Major that tries to learn as much as he possibly can. On the side, I am also an avid Philadelphia Sports fan, and just Sports fan in general. Go Eagles !</p>
+      </div>
+
+      <div class="alert alert-info mt-4">
+        <strong>Another Fun Fact:</strong> I have worked for the City of Philadelphia Parks and Recreation Department for about 8 years, since I was 14 years old!
+      </div>
+
+      <div class="row mt-3 next justify-content-center" id ="skills">
+        <a href="#skills" class="col text-center">
+          <iconify-icon icon="material-symbols:arrow-circle-down" class="arrow-next"></iconify-icon>
+        </a>
+      </div>
+    </div>
+
       <div class="row my-4 language-wrapper row-gap-5 col-gap-1 gap-lg-2">
+        <h4 class="h1 font-weight-bold mx-auto text-center">Skills</h4>
+
         <div class="col text-center">
           <img
             src="images/python.jpg"
             data-bs-toggle="tooltip"
             data-placement="top"
             title="Python"
-          />
-        </div>
-        <div class="col text-center">
-          <img
-            src="images/angular.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="Angular"
-          />
-        </div>
-        <div class="col text-center">
-          <img
-            src="images/typescript.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="TypeScript"
           />
         </div>
 
@@ -147,14 +165,7 @@
             title="C#"
           />
         </div>
-        <div class="col text-center">
-          <img
-            src="images/node.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="Node.js"
-          />
-        </div>
+
         <div class="col text-center">
           <img
             src="images/java.jpg"
@@ -172,6 +183,7 @@
             title="ASP.NET"
           />
         </div>
+
         <div class="col text-center">
           <img
             src="images/mssql.jpg"
@@ -180,218 +192,150 @@
             title="Microsoft SQL Server"
           />
         </div>
-        <div class="col text-center">
-          <img
-            src="images/mongodb.jpg"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="MongoDB"
-          />
-        </div>
       </div>
 
-      <div class="row mt-3 mt-lg-5 next">
-        <a href="#projects" class="col"
-          ><iconify-icon
-            icon="material-symbols:arrow-circle-down"
-            class="arrow-next"
-          ></iconify-icon
-        ></a>
+      <div class="row mt-3 next justify-content-center">
+        <a href="#hobbies" class="col text-center">
+          <iconify-icon icon="material-symbols:arrow-circle-down" class="arrow-next"></iconify-icon>
+        </a>
       </div>
-    </div>
-    <div
-      class="container section min-vh-100 d-flex justify-content-center flex-column align-items-center"
-      id="projects"
-    >
+
+      <div class="container section d-flex justify-content-center flex-column align-items-center py-3" id="hobbies">
+        <div class="row mx-auto">
+          <h4 class="h1 font-weight-bold mx-auto text-center">Hobbies</h4>
+        </div>
+        
+        <div class="row mx-auto">
+          <h5 class="h5 mx-auto text-opacity-75 text-primary text-center mb-4">Some things I love to do in my free time:</h5>
+        </div>
+      
+        <div class="row mx-auto">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex align-items-center">
+              <iconify-icon icon="twemoji:american-football" width="30" height="30" class="me-3"></iconify-icon>
+              <span class="h5">Football</span>
+              <p class="text-muted ms-3">I am an avid Football fan, but I bleed green and will always be an Eagles fan.</p>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+              <iconify-icon icon="twemoji:musical-note" width="30" height="30" class="me-3"></iconify-icon>
+              <span class="h5">Music</span>
+              <p class="text-muted ms-3">Listening to music is my go-to way to relax after a long day.</p>
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+              <iconify-icon icon="twemoji:video-game" width="30" height="30" class="me-3"></iconify-icon>
+              <span class="h5">Gaming</span>
+              <p class="text-muted ms-3">In my free time, I enjoy playing video games, mainly with my friends - It is an escape from reality to put all of the trials and tribulations of the day to rest.</p>
+            </li>
+          </ul>
+        </div>
+      
+        <div class="row mt-3 next justify-content-center">
+          <a href="#projects" class="col text-center">
+            <iconify-icon icon="material-symbols:arrow-circle-down" class="arrow-next"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      
+    <div class="container section d-flex justify-content-center flex-column align-items-center py-3" id="projects">
       <div class="row mx-auto">
         <h4 class="h1 font-weight-bold mx-auto text-center">Projects</h4>
       </div>
+
       <div class="row mx-auto">
-        <h5 class="h5 mx-auto text-opacity-75 text-primary text-center mb-4">
-          I've worked on some neat things.
-        </h5>
+        <h5 class="h5 mx-auto text-opacity-75 text-primary text-center mb-4">Here are some of the projects that I have worked on:</h5>
       </div>
-      <div class="row w-100">
-        <h5>Inspiro for Esperanza</h5>
-      </div>
-      <div class="row w-100 mb-4">
-        <p class="text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus
-          nisi in neque blandit auctor. Vestibulum pellentesque fringilla nulla
-          quis sagittis. Donec id erat sodales, fringilla est non, vestibulum
-          tellus. Suspendisse potenti. Fusce et dolor blandit, tincidunt eros
-          non, pharetra orci. Donec massa neque, suscipit at purus ac, cursus
-          tincidunt purus. Suspendisse imperdiet massa nec sem dictum luctus.
-          Vestibulum at porta lectus, sed faucibus libero.
-        </p>
-      </div>
-      <div class="row w-100">
-        <h5>Work From Home Pinterest</h5>
-      </div>
-      <div class="row w-100 mb-4">
-        <p class="text-justify">
-          Vestibulum vulputate ullamcorper placerat. Fusce bibendum ligula non
-          ex dapibus finibus. Nulla facilisi. Integer eu libero lorem.
-          Pellentesque eget pretium ligula. Donec finibus nibh sed leo dapibus
-          imperdiet. Fusce cursus eu mi sed porttitor. Aliquam eget suscipit
-          dolor, ac mollis risus. Vestibulum commodo turpis nulla, bibendum
-          varius urna dictum porta.
-        </p>
-      </div>
-      <div class="row w-100">
-        <h5>Query Dating Site</h5>
-      </div>
-      <div class="row w-100">
-        <p class="text-justify">
-          Fusce egestas lectus ac est porttitor congue. Mauris lacinia pharetra
-          odio ut egestas. Nullam facilisis condimentum consequat. Integer arcu
-          nibh, ullamcorper non fringilla quis, tempus sit amet turpis. Proin ac
-          gravida mi. Ut eros quam, pharetra venenatis pharetra at, porttitor
-          sit amet dolor. Ut et accumsan metus. Phasellus eros diam, tristique a
-          maximus vel, fringilla eu nisl. Pellentesque sed quam non urna dapibus
-          porta in in nibh. Phasellus lobortis nibh est, id pretium orci
-          efficitur at.
-        </p>
-      </div>
-      <div class="row mt-3 next">
-        <a href="#courses" class="col"
-          ><iconify-icon
-            icon="material-symbols:arrow-circle-down"
-            class="arrow-next"
-          ></iconify-icon
-        ></a>
-      </div>
-    </div>
-    <div
-      class="container section min-vh-100 d-flex justify-content-center flex-column align-items-center"
-      id="courses"
-    >
-      <div class="row mx-auto">
-        <h4 class="h1 font-weight-bold mx-auto text-center">Courses</h4>
-      </div>
-      <div class="row mx-auto mb-4">
-        <h5 class="h5 mx-auto text-center text-primary text-opacity-75">
-          Not as tasty as a main course, but close.
-        </h5>
-      </div>
-      <div class="row w-100 justify-content-center my-3 gap-4">
-        <a
-          class="col-11 col-lg-5 text-center course class-card p-4 rounded text-decoration-none d-flex justify-content-center align-items-center"
-          type="button"
-          href="https://bulletin.temple.edu/search/?P=CIS%204296"
-          target="_blank"
-        >
-          <h5 class="m-0">Information Systems Analysis and Design</h5>
-        </a>
-        <a
-          class="col-11 col-lg-5 text-center course class-card p-4 rounded text-decoration-none d-flex justify-content-center align-items-center"
-          type="button"
-          href="https://bulletin.temple.edu/search/?P=CIS%203342"
-          target="_blank"
-        >
-          <h5 class="m-0">Server-Side Web Application Development</h5>
-        </a>
-        <a
-          class="col-11 col-lg-5 text-center course class-card p-4 rounded text-decoration-none d-flex justify-content-center align-items-center"
-          type="button"
-          href="https://bulletin.temple.edu/search/?P=CIS%203329"
-          target="_blank"
-        >
-          <h5 class="m-0">Network Architectures</h5>
-        </a>
-        <a
-          class="col-11 col-lg-5 text-center course class-card p-4 rounded text-decoration-none d-flex justify-content-center align-items-center"
-          type="button"
-          href="https://bulletin.temple.edu/search/?P=CIS%203344"
-          target="_blank"
-        >
-          <h5 class="m-0">Client-Side Scripting</h5>
-        </a>
-        <a
-          class="col-11 col-lg-5 text-center course class-card p-4 rounded text-decoration-none d-flex justify-content-center align-items-center"
-          type="button"
-          href="https://bulletin.temple.edu/search/?P=CIS%203309"
-          target="_blank"
-        >
-          <h5 class="m-0">Component-Based Software Design</h5>
-        </a>
-        <a
-          class="col-11 col-lg-5 text-center course class-card p-4 rounded text-decoration-none d-flex justify-content-center align-items-center"
-          type="button"
-          href="https://bulletin.temple.edu/search/?P=CIS%202109"
-          target="_blank"
-        >
-          <h5 class="m-0">Database Management Systems</h5>
-        </a>
-        <div class="row mt-5 next justify-content-center align-items-center">
-          <a href="#contact" class="text-center"
-            ><iconify-icon
-              icon="material-symbols:arrow-circle-down"
-              class="arrow-next"
-            ></iconify-icon
-          ></a>
+
+      <div class="card" style="width: 18rem;">
+        <img src="images/Screenshot 2025-02-03 at 7.17.28 AM.png" class="card-img-top" alt="Project Image" />
+        <div class="card-body">
+          <h5 class="card-title">NBA Player Database</h5>
+          <p class="card-text">A Windows Application that allows users to search through a database of Players. Coded in C# by connecting to a Database (Access) to fill in data. </p>
         </div>
+
+        <div class="card" style="width: 18rem;">
+          <img src="images/Screenshot 2025-02-03 at 7.36.14 AM.png" class="card-img-top" alt="Project Image" />
+          <div class="card-body">
+            <h5 class="card-title">Mimic Eagles Single Page Application</h5>
+            <p class="card-text">This was a Single Page Application coded using various languages: HTML, CSS, JavaScript. We also implemented REACT components, as well as incorporated AJAX. </p>
+          </div>
+          </div>
+        
+
+      <div class="row mt-3 next justify-content-center">
+        <a href="#courses" class="col text-center">
+          <iconify-icon icon="material-symbols:arrow-circle-down" class="arrow-next"></iconify-icon>
+        </a>
       </div>
     </div>
-    <div
-      class="container section min-vh-100 d-flex justify-content-center flex-column align-items-center"
-      id="contact"
-    >
-      <div class="row mx-auto">
-        <h4 class="h1 font-weight-bold mx-auto text-center">
-          Feel Like Reaching Out?
-        </h4>
+    </div>
+
+    <div class="container section d-flex flex-column align-items-center" id="courses">
+      <h4 class="h1 font-weight-bold text-center mb-4">Courses</h4>
+      <h5 class="h5 text-center text-primary text-opacity-75 mb-4">Here are some of the notable courses that I have taken/am currently taking at Temple University:</h5>
+      
+      <div id="coursesCarousel" class="carousel slide w-75" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a class="d-block text-center course class-card p-4 rounded text-decoration-none" href="https://bulletin.temple.edu/search/?P=CIS%204296" target="_blank">
+              <h5>Information Systems Analysis and Design</h5>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a class="d-block text-center course class-card p-4 rounded text-decoration-none" href="https://bulletin.temple.edu/search/?P=CIS%203342" target="_blank">
+              <h5>Server-Side Web Application Development</h5>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a class="d-block text-center course class-card p-4 rounded text-decoration-none" href="https://bulletin.temple.edu/search/?P=CIS%203329" target="_blank">
+              <h5>Network Architectures</h5>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a class="d-block text-center course class-card p-4 rounded text-decoration-none" href="https://bulletin.temple.edu/search/?P=CIS%203344" target="_blank">
+              <h5>Client-Side Scripting for the Web</h5>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a class="d-block text-center course class-card p-4 rounded text-decoration-none" href="https://bulletin.temple.edu/search/?P=CIS%203309" target="_blank">
+              <h5>Component-Based Software Design</h5>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a class="d-block text-center course class-card p-4 rounded text-decoration-none" href="https://bulletin.temple.edu/search/?P=CIS%202109" target="_blank">
+              <h5>Database Management Systems</h5>
+            </a>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#coursesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#coursesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="row mx-auto">
-        <h5 class="h5 mx-auto text-opacity-75 text-primary text-center">
-          I don't bite.
-        </h5>
+
+      <div class="alert alert-info mt-4">
+        <strong>A Final Fun Fact:</strong> I actually came to Temple as a Communication Studies Major, as I initially wanted to be in the Sports Media field -- 
+        I changed majors during the backend of my Sophomore Year.
       </div>
-      <div class="row my-4 contact-wrapper gap-3">
-        <a href="mailto:johndoe@gmail.com" class="col text-black">
-          <iconify-icon
-            icon="logos:google-gmail"
-            width="60"
-            height="60"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="Email"
-          ></iconify-icon>
-        </a>
-        <a href="https://www.linkedin.com/in/johndoe/" class="col"
-          ><iconify-icon
-            icon="skill-icons:linkedin"
-            width="60"
-            height="60"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="LinkedIn"
-          ></iconify-icon>
-        </a>
-        <a href="https://github.com/johndoe" class="col"
-          ><iconify-icon
-            icon="skill-icons:github-dark"
-            width="60"
-            height="60"
-            data-bs-toggle="tooltip"
-            data-placement="top"
-            title="GitHub"
-          ></iconify-icon>
-        </a>
       </div>
-      <div class="row mt-5">
-        <div>
+
+      <div class="row my-4 contact-wrapper gap-3 justify-content-center">
+        <div class="col-auto">
           <a href="#home">
             <button type="button" class="btn btn-primary">
-              Return to Top<iconify-icon
+              Return to Top
+              <iconify-icon
                 icon="material-symbols:arrow-circle-up"
                 class="fs-5"
                 style="margin-bottom: -3.5px; margin-left: 5px"
-              ></iconify-icon></button
-          ></a>
+              ></iconify-icon>
+            </button>
+          </a>
         </div>
       </div>
-    </div>
 
     <script>
       const tooltipTriggerList = document.querySelectorAll(

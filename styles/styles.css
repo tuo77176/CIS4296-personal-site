@@ -1,10 +1,19 @@
 html,
 body {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 60px;
 }
 
 .section {
-    padding-top: 75px;
+    padding-top: 50px;
+    padding-bottom: 70px;
 }
 
 .next {
@@ -17,10 +26,12 @@ body {
 
 .arrow-next {
     color: var(--bs-primary) !important;
+    transition: color 0.3s ease, transform 0.3s ease;  /* Added transition */
 }
 
 .arrow-next:hover {
     color: var(--bs-primary-dark) !important;
+    transform: translateY(-5px);  /* Lift the arrow on hover */
 }
 
 .nav-item:hover {
