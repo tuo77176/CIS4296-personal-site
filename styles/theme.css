@@ -5,6 +5,9 @@
     --bs-primary-dark: #721426;
     --bs-primary-dark-rgb: 136, 24, 35;
 
+    --bs-secondary: #4A90E2;
+    --bs-secondary-dark: #357ABD;
+    --bs-secondary-rgb: 74, 144, 226;
 }
 
 .btn-primary {
@@ -30,8 +33,9 @@
     --bs-navbar-padding-y: 0;
     --bs-navbar-brand-color: white;
     --bs-navbar-brand-hover-color: white;
-}
+    background-color: var(--bs-primary);
 
+}
 
 .navbar-nav {
     --bs-nav-link-padding-x: 0;
@@ -41,7 +45,14 @@
 
 }
 
-.navbar-nav {
-    --bs-nav-link-color: white;
-    --bs-nav-link-hover-color: white;
+.class-card {
+    background-color: #eeeeee;
+    color: black;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+
+.class-card:hover {
+    background-color: var(--bs-primary);
+    color: white;
 }

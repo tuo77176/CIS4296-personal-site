@@ -1,10 +1,8 @@
 html,
 body {
     font-family: 'Times New Roman', Times, serif, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
 body {
@@ -14,6 +12,8 @@ body {
 .section {
     padding-top: 50px;
     padding-bottom: 70px;
+    background-color: #ffffff;
+
 }
 
 .next {
@@ -21,17 +21,16 @@ body {
 }
 
 .next a {
-    color: rgb(33, 37, 41);
+    color: var(--bs-primary);
 }
 
 .arrow-next {
     color: var(--bs-primary) !important;
-    transition: color 0.3s ease, transform 0.3s ease;  /* Added transition */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .arrow-next:hover {
     color: var(--bs-primary-dark) !important;
-    transform: translateY(-5px);  /* Lift the arrow on hover */
 }
 
 .nav-item:hover {
@@ -60,4 +59,13 @@ body {
 .class-card:hover {
     background-color: var(--bs-primary);
     color: white;
+}
+
+.hobbies-section {
+    background-color: var(--bs-primary-light);
+    color: white;
+}
+
+.about-section {
+    background-color: #f7f7f7;
 }
